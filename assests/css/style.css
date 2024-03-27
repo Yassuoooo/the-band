@@ -1,0 +1,644 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Nguyen tac:
+1. Tu ngoai vao trong
+2. Tu tren xuong duoi
+3. Tong quan den chi tiet
+*/
+
+/* Dat cau hoi:
+  1. Vi tri
+  2. Kich thuoc (width, height)
+  3. Mau sac
+  4. Kieu dang(kieu chu, hinh tron, vuong...)
+*/
+
+/* Dùng row và colummn để làm layout: */
+
+/* Common(tái sử dụng cho nhiều đối tượng): */
+
+/* CSS cho thẻ clear để fix float: */
+#content .clear {
+    clear: both;
+}
+
+/* Tạo class row: */
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+/* Tạo element giả ở cuối(after) để fix float: */
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Tạo class col: */
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* Tạo class col-half: */
+.col-half {
+    width: 50%;
+}
+
+/* Tạo class third: */
+.col-third {
+    width: 33.33333%;
+}
+
+/* Tạo class col-full: */
+.col-full {
+    width: 100%;
+}
+
+/* Tạo class text-center:*/
+.text-center {
+    text-align: center !important;
+}
+
+/* Tạo class margin-top 8px: */
+.m-t8 {
+    margin-top: 8px !important;
+}
+
+/* Header: */
+#header {
+    height: 46px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* z-index: trục tọa độ sâu */
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
+}
+
+/* CSS chung cho các thẻ li: */
+#nav li {
+    position: relative;
+}
+
+/* Sử dụng selector để CSS cho riêng thẻ con li cấp 1 */
+#nav > li {
+    display: inline-block;
+}
+
+/* Sử dụng CSS để bỏ đi dấu list cho cả nav và subnav: */
+#nav, .subnav {
+    list-style-type: none;
+}
+
+/* CSS chung cho các thẻ a: */
+#nav li a {
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 12px;
+    display: block;
+}
+
+/* Sử dụng selector để CSS cho riêng thẻ con a cấp 1 */
+#nav > li > a {
+    color: white;
+    text-transform: uppercase;
+}
+
+/* CSS a thành chữ đen nền xám khi hover: */
+#nav li:hover a {
+    color: black;
+}
+
+/* CSS subnav a và thẻ a cấp 1 khi hover: */
+#nav .subnav li:hover a,
+#nav > li:hover > a {
+    color: black;
+    background-color: #ccc;
+}
+
+/* CSS cho subnav: */
+#nav .subnav {
+    display: none;
+    position: absolute;
+    background-color: white;
+    /* Đổ bóng cho subnav: */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* CSS cho con a của subnav: */
+#nav .subnav a {
+    color: black;
+    line-height: 38px;
+    min-width: 160px;
+}
+
+#nav > li:hover .subnav {
+    display: block;
+}
+
+/* CSS cho icon arrow down: */
+#nav .ti-angle-down {
+    font-size: 12px;
+}
+
+/* CSS cho div search button: */
+#header .search-button {
+    float: right;
+    padding: 0 21px;
+}
+
+/* CSS cho div search button khi hover: */
+#header .search-button:hover {
+    cursor: pointer;
+    background-color: #f44336;
+}
+
+/* CSS cho icon search trong div search button: */
+#header .search-icon {
+    color: white;
+    font-size: 20px;
+    line-height: 46px;
+}
+
+/* CSS cho thẻ div slider: */
+#slider {
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url(/learning/cssProjectTheBand/assests/img/slider/chicago.jpg) top center / cover no-repeat;
+}
+
+/* CSS cho thẻ div text của slider: */
+#slider .text {
+    position: absolute;
+    color: white;
+    bottom: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* CSS riêng cho thẻ first-text: */
+#slider .text > .first-text {
+    font-weight: 500;
+    font-size: 34px;
+}
+
+/* CSS riêng cho thẻ second-text: */
+#slider .text > .second-text {
+    margin-top: 25px;
+}
+
+
+/* Content: */
+
+/* About: */
+
+/* CSS cho thẻ div content-section: */
+#content .about-section {
+    width: 800px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* CSS cho section-heading: */
+#content .section-heading {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin: 10px 0;
+}
+
+/* CSS cho section-sub-heading: */
+#content .section-sub-heading {
+    text-align: center;
+    font-size: 15px;
+    margin: 15px 0;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+/* CSS cho about: */
+#content .about {
+    text-align: justify;
+    line-height: 1.4;
+    margin: 15px 0;
+}
+
+/* Team: */
+
+/* CSS cho thẻ div team-section: */
+
+#content .team-section {
+    padding: 32px 0;
+}
+
+/* CSS cho 3 thẻ div member: */
+/* #content .member {
+    float: left;
+    width: 33.33333%;
+    text-align: center;
+} */
+
+/* CSS cho thẻ p member-name: */
+#content .member-name {
+    margin: 15px 0;
+    font-size: 15px;
+    
+}
+
+/* CSS cho thẻ img member-img: */
+#content .member-img {
+    height: 154px;
+    width: 154px;
+    border-radius: 4px;
+}
+
+/* Tour: */
+
+/* CSS cho thẻ div tour: */
+.tour {
+    background-color: black;
+}
+
+/* CSS cho thẻ div tour-section: */
+.tour .tour-section {
+    padding: 64px 16px;
+    /* margin: 0 136.800px; */
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CSS cho riêng 2 thẻ section-heading và section-sub-heading của tour: */
+.tour-section > .section-heading, .tour-section > .section-sub-heading {
+    color: white;
+}
+
+/* CSS cho thẻ ul: */
+.tour-section ul {
+    list-style: none;
+}
+
+/* CSS cho thẻ ul ticket-class: */
+.tour .ticket-class {
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+/* CSS riêng cho thẻ li: */
+.ticket-class > li {
+    font-size: 15px;
+    padding: 8px 16px;
+    color: #757575;
+    border-bottom: 1px solid #ddd;
+    line-height: 22.5px;
+}
+
+/* CSS riêng cho thẻ sold out của li: */
+.ticket-class > li > .sold-out {
+    color: #fff;
+    background-color: #f44336;
+    padding: 0 8px;
+    margin-left: 16px;
+    line-height: 22.5px;
+}
+
+/* CSS riêng cho thẻ quantity của li: */
+.ticket-class > li > .quantity {
+    width: 25px;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    padding: 0 8px;
+    line-height: 22.5px;
+    margin-right: 16px;
+    float: right;
+}
+
+/* Tour place: */
+
+/* CSS cho thẻ div place-list: */
+.place-list {
+    /* padding: 32px 8px;
+    margin: 0 -16px; */
+    margin: 32px 0;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+/* CSS cho thẻ div place-item: */
+/* .place-list .place-item {
+    width: 33.33333%;
+    float: left;
+    padding: 0 8px;
+    margin-bottom: 16px;
+    font-size: 15px;
+} */
+
+/* CSS cho thẻ place-img: */
+.place-img {
+    width: 100%;
+    display: block;
+}
+
+/* CSS hover cho place-img: */
+.place-img:hover {
+    opacity: 0.6;
+}
+
+/* CSS cho thẻ div place-body: */
+.place-body {
+    background-color: white;
+    padding: 0.200px 16px;
+}
+
+/* CSS cho thẻ h3 place-name: */
+.place-name {
+    font-size: 15px;
+}
+
+/* CSS cho thẻ p place-time: */
+.place-time {
+    color: #757575;
+}
+
+/* CSS cho thẻ p place-about: */
+.place-about {
+    line-height: 1.5;
+}
+
+/* CSS chung cho 3 thẻ trên: */
+.place-time, .place-name, .place-about {
+    margin: 15px 0;
+}
+
+/* CSS cho thẻ a place-buy-btn: */
+.place-buy-btn {
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+/* CSS hover cho place-buy-btn: */
+.place-buy-btn:hover {
+    color: black;
+    background-color: #ccc;
+}
+
+/* Buy ticket modal: */
+
+.buy-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    /* Dùng flex để modal-container nằm giữa buy-modal: */
+    /* display: flex; */
+    /* Nằm giữa chiều dọc: */
+    align-items: center;
+    /* Nằm giữa chiều ngang: */
+    justify-content: center;
+    /* Ẩn modal đi: */
+    display: none;
+}
+
+/* Show modal: */
+.buy-modal.open {
+    display: flex;
+}
+
+/* CSS cho thẻ div modal-container: */
+.buy-modal .modal-container {
+    background: #fff;
+    width: 900px;
+    min-height: 200px;
+    position: relative;
+    /* Tránh co sát browser: */
+    max-width: calc(100% - 32px);
+    /* Thêm animation show: */
+    animation: modalFadein ease 0.4s;
+}
+
+/* CSS cho thẻ div modal-header: */
+.buy-modal .modal-header {
+    height: 130px;
+    color: white;
+    background-color: #009688;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+/* CSS cho icon ti-bag: */
+.modal-header .ti-bag {
+    margin-right: 16px;
+}
+
+/* CSS cho thẻ div modal-close: */
+.modal-container .modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* CSS hover cho thẻ div modal-close: */
+.modal-container .modal-close:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+/* CSS cho thẻ div modal-body: */
+.buy-modal .modal-body {
+    padding: 0.150px 16px;
+}
+
+/* CSS cho thẻ label modal-label: */
+.modal-body .modal-label {
+    display: block;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+/* CSS cho thẻ input modal-input: */
+.modal-body .modal-input {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+/* CSS cho thẻ button buy-button: */
+.modal-body #buy-button {
+    border: none;
+    padding: 16px;
+    margin-top: 16px;
+    width: 100%;
+    color: #fff;
+    background-color: #009688;
+    cursor: pointer;
+}
+
+/* CSS hover cho thẻ buy-button: */
+.modal-body #buy-button:hover {
+    color: black;
+    background-color: #ccc;
+}
+
+/* CSS cho thẻ div modal-footer: */
+.modal-container .modal-footer {
+    text-align: right;
+    padding: 16px;
+}
+
+/* CSS cho thẻ a của modal-help: */
+.modal-footer .modal-help a {
+    color: #2196F3;
+}
+
+/* Tạo cơ chế animation show cho modal-container: */
+@keyframes modalFadein {
+    from {
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact: */
+
+/* CSS cho contact-heading: */
+.contact .contact-section {
+    padding: 64px 16px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CSS cho contact-content: */
+.contact-section .contact-content {
+    padding: 32px 0;
+}
+
+/* CSS cho contact-info: */
+.contact-content .contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Sử dụng selector nâng cao CSS cho các class có ti-:  */
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+
+/* CSS cho contact-form: */
+.contact-content .contact-form {
+    font-size: 15px;
+}
+
+/* CSS cho form-control: */
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+/* CSS cho form-submit-btn: */
+.contact-form .form-submit-btn {
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 8px 16px;
+    font-size: 15px;
+    margin: 16px 0;
+    float: right;
+    cursor: pointer;
+}
+
+/* CSS hover cho form-submit-btn: */
+.contact-form .form-submit-btn:hover {
+    color: black;
+    background-color: #ccc;
+}
+
+/* Map: */
+
+#content .map-section img {
+    width: 100%;
+}
+
+/* Footer: */
+
+/* CSS cho footer: */
+#content #footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+/* CSS cho social-list: */
+#footer .social-list {
+    font-size: 24px;
+}
+
+/* CSS cho a: */
+.social-list a {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    cursor: auto;
+}
+
+/* CSS hover cho a: */
+.social-list a:hover {
+    opacity: 0.4;
+}
+
+/* CSS cho copy-right: */
+#footer .copy-right {
+    font-size: 15px;
+    margin: 15px 0;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* CSS cho w3: */
+.copy-right .w3 {
+    color: rgba(0, 0, 0, 0.6);
+}

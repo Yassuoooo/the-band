@@ -1,0 +1,97 @@
+<!-- Responsive web The Band -->
+
+<!-- Media queries: Các chuỗi truy vấn -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+</head>
+<style>
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    .pc,
+    .tablet,
+    .mobile {
+        font-size: 68px;
+        display: none;
+    }
+
+    /* Max-width: độ rộng tối đa (<=) để CSS chạy: */
+    @media (max-width: 800px) {
+        /* h1 {
+            font-size: 68px;
+            color: red;
+        } */
+    }
+
+    /* Min-width: độ rộng tối thiểu (>=) để CSS chạy: */
+    @media (min-width: 800px) {
+        .pc,
+        .tablet,
+        .mobile {
+            font-size: 68px;
+            color: blue;
+        }
+    }
+
+    /* Size:
+        PC: >= 1024px
+        Tablet: >= 740px & < 1024px
+        Mobile: < 740px 
+    */
+
+    /* Break Point: */
+    
+    /* PC: */
+    @media (min-width: 1024px) {
+        .pc {
+            display: block;
+            align-items: center;
+            justify-content: center;
+            color: red;
+        }
+    }
+
+    /* Tablet: */
+    @media (min-width: 740px) and (max-width: 1023px) {
+        .tablet {
+            display: block;
+            align-items: center;
+            justify-content: center;
+            color: blue
+        }
+    }
+
+    /* Mobile: */
+    @media (max-width: 740px) {
+        .mobile {
+            display: block;
+            align-items: center;
+            justify-content: center;
+            color: green;
+        }
+    }
+        
+
+</style>
+<body>
+    <h1>Media Queries</h1>
+    <p class="pc">PC</p>
+    <p class="tablet">Tablet</p>
+    <p class="mobile">mobile</p>
+</body>
+</html>
